@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+        #div1 {
+          height: 20em;
+          margin: -3em 0;
+          overflow: hidden;
+          transform: rotate(120deg);
+          visibility: hidden;
+          width: 10em;
+       border: 1px solid black;
+        
+          margin-top: -67px;
+    margin-bottom: -68px;
+        }
+        #div2 {
+          height: 100%;
+          overflow: hidden;
+          transform: rotate(-60deg);
+          width: 100%;
+         
+          border: 1px solid black;
+        }
+        #div3 {
+          height: 100%;
+          transform: rotate(-60deg); 
+          visibility: visible ;
+          width: 100%;
+          background-image: url('pasto.jpeg');
+          border: 1px solid black;
+        }
+        #hexagono{
+           
+            background-color: rgba(255, 166, 0, 0);
+            height: auto;
+
+            position: absolute;
+        }
+        
+        </style>    
+<body>
+  <!--  <div id="hexagono">
+     <div id="div1" class="color-example"> 
+          <div id="div2" class="color-example">
+              <div id="div3" class="color-example"></div>
+           </div>   
+    </div>   
+</div> -->
+    
+
+</body>
+<script>
+        function hexagon(posx,posy,nombre){
+            let hexagono=document.createElement('div');
+            hexagono.id='hexagono';
+            hexagono.style.left=posx+'px';
+            hexagono.style.top=posy+'px';
+            let div1=document.createElement('div');
+            div1.id='div1';
+            
+            let div2=document.createElement('div');
+            div2.id='div2';
+            let div3=document.createElement('div');
+            div3.id='div3';
+            div3.innerHTML=nombre;
+            let div4=document.createElement('div');
+            div4.style.width=50+'px';
+            div4.style.height=50+'px';
+            div4.style.backgroundColor='green';
+            div4.style.margin="40%";
+            div4.style.position='relative'
+            div4.innerHTML=nombre;
+            
+            hexagono.appendChild(div1).appendChild(div2).appendChild(div3).appendChild(div4)
+            document.body.appendChild(hexagono)
+        }
+       for(let i=0;i<16;i++){
+         for(let j=0;j<16;j++){
+            if(i==0){
+                hexagon((j*160),(i*185),'rafa')
+              
+            }else if(i==1){
+                hexagon((j*160)+80,(i*185)-46,'Mary')
+            }else if(i%2==0){
+                hexagon((j*160),(i*185)-(46*i),'rafa')
+            }else{
+                hexagon((j*160)+80,(i*185)-46*i,'Mary')
+            }
+        
+              
+         } 
+       }  
+
+
+    
+    
+    
+    </script>       
+
+</html>
